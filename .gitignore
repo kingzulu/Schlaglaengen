@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Xcode / Swift Playgrounds
+xcuserdata/
+*.xcuserstate
+DerivedData/
+.build/
+.swiftpm/xcode/
+*.xcworkspace/xcuserdata/
+
+# Archiv der App (Code liegt im Repo)
+*.zip
