@@ -57,7 +57,13 @@ struct ContentView: View {
                 AboutView()
             }
         }
-        .onAppear { gps.start() }
+        .onAppear {
+            gps.start()
+            // Gemerkter Schläger gibt es nicht mehr (z. B. altes „Hybrid“).
+            if !Clubs.all.contains(club) {
+                club = club == "Hybrid" ? "Hybrid 3" : "Driver"
+            }
+        }
         .onChange(of: scenePhase) { phase in
             // GPS nur laufen lassen, solange die App offen ist (spart Akku).
             if phase == .active { gps.start() } else if phase == .background { gps.stop() }

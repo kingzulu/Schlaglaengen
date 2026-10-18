@@ -4,7 +4,7 @@ import CoreLocation
 /// Die Schläger zur Auswahl.
 enum Clubs {
     static let all = [
-        "Driver", "Holz 3", "Holz 5", "Hybrid",
+        "Driver", "Holz 3", "Holz 5", "Holz 7", "Hybrid 3",
         "Eisen 4", "Eisen 5", "Eisen 6", "Eisen 7", "Eisen 8", "Eisen 9",
         "PW", "GW", "SW", "LW"
     ]

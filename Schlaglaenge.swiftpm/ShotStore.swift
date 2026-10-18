@@ -16,7 +16,12 @@ final class ShotStore: ObservableObject {
     private static let startKey = "schlaglaenge-start-v1"
 
     init() {
-        shots = Self.load([Shot].self, key: Self.shotsKey) ?? []
+        var loaded = Self.load([Shot].self, key: Self.shotsKey) ?? []
+        // Früher hieß „Hybrid 3“ nur „Hybrid“.
+        for i in loaded.indices where loaded[i].club == "Hybrid" {
+            loaded[i].club = "Hybrid 3"
+        }
+        shots = loaded
         openStart = Self.load(MeasuredPoint.self, key: Self.startKey)
     }
 
